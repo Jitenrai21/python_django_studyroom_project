@@ -5,6 +5,6 @@ pipeline {
             steps {
                 bat 'python --version'
             }
-        }
-    }
+}
+}
 }
