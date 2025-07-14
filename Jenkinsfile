@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat 'python --version'
+                bat 'echo "Hello World"'
+                bat '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
         }
     }
