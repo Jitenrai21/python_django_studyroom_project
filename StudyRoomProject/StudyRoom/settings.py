@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lnv55z6=+5jpgrc!o_306i#z@^-cvmokg_v0!(d)3l)ldpxq0t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'django_revised.urls'
+ROOT_URLCONF = 'StudyRoom.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_revised.wsgi.application'
+WSGI_APPLICATION = 'StudyRoom.wsgi.application'
 
 
 # Database
@@ -139,4 +139,3 @@ MEDIA_ROOT = BASE_DIR / 'static/images'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
-
