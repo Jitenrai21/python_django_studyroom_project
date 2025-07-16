@@ -100,14 +100,13 @@ def createRoom(request):
     topics = Topic.objects.all()
     if request.method == 'POST':
         topic_name = request.POST.get('topic')
-        topic, created = Topic.objects.get_or_create(name=topic_name)
+        topic, created = Topic.objects.get_or_create(name=topic_name) # get or create function allows the created similar topic not to be saved as new topic again
 
         Room.objects.create(
             host = request.user,
             topic=topic,
             name=request.POST.get('name'),
             description=request.POST.get('description'),
-
         )
         
         return redirect('home')

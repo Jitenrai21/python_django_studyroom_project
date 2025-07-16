@@ -265,6 +265,18 @@ a {
 =>  Header Section
 ================================*/
 
+.avatar--medium.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #00cc00; /* Green dot for active status */
+    border-radius: 50%;
+    border: 2px solid white; /* Optional: white border for contrast */
+}
+
 .header {
   padding: 1.5rem;
   background-color: var(--color-dark);
