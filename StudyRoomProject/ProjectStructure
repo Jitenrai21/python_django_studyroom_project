@@ -30,14 +30,18 @@ StudyRoomProject
 │        ├── main.css                     
 │        └── style.css
 │
-├── Modules/
-│   ├── background.py
-│   ├── boom_animation.py
-│   ├── calibration.py
-│   └── pop_score.py
+├── StudyRoom/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 │
-├── best.onnx                 
-├── best1.onnx
-├── main_chimpvineVersion.py    
+├── Templates/
+│   ├── main.html
+│   └── navbar.html
+│
+├── db.sqlite3              
+├── manage.py
 ├── requirements.txt         
 └── Project_Structure              
