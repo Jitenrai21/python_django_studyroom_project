@@ -1,21 +1,34 @@
 StudyRoomProject
 ├── base/
 │   ├── templates/
-│   │    ├── Balloon1.png       
-│   │    ├── Balloon2.png 
-│   │    ├── Balloon3.png 
-│   │    ├── Cloud1.png 
-│   │    ├── Cloud2.png 
-│   │    ├── Cloud3.png 
-│   │    ├── Cloud4.png 
-│   │    ├── Logo.png 
-│   │    ├── Moon.png 
-│   │    ├── sand_Chimp.png               
-│   │    └── Sun.png    
-│   ├── balloon-pop.mp3       
-│   ├── boom1.png             
-│   ├── miss.mp3              
-│   └── miss.png
+│   │    ├── activity_component.html                     
+│   │    ├── activity.html                     
+│   │    ├── delete.html                     
+│   │    ├── feed_component.html                     
+│   │    ├── home.html                     
+│   │    ├── login_register.html                     
+│   │    ├── profile.html                     
+│   │    ├── room_form.html                     
+│   │    ├── room.html                     
+│   │    ├── topic_components.html  
+│   │    ├── topics.html                     
+│   │    └── update-user.html
+│   ├── __init__.py    
+│   ├── admin.py    
+│   ├── apps.py    
+│   ├── forms.py    
+│   ├── models.py    
+│   ├── tests.py    
+│   ├── urls.py                 
+│   └── views.py
+│
+├── static/
+│   ├── images/
+│   ├── js/   
+│   │    └── script.js                     
+│   └── styles
+│        ├── main.css                     
+│        └── style.css
 │
 ├── Modules/
 │   ├── background.py
