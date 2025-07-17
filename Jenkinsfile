@@ -1,28 +1,60 @@
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent any 
+    agent any
+    environment {
+        VENV = 'venv'
+    }
     stages {
-        stage('build') {
+        stage('Check Out') {
             steps {
-                bat 'echo "Hello World"'
+                git branch: 'main', url: 'https://github.com/Jitenrai21/python_django_studyroom_project.git'
+        }
+
+        stage('Set up VENV') {
+            steps {
+                bat 'python -m env %VENV%'
+                bat '%VENV%\\Scripts\\python -m pip install --upgrade pip'
+                bat '%VENV%\\Scripts\\pip install -r requirements.txt'
+            }
+        }
+
+        // stage('Run Django Commands') {
+        //     steps {
+        //         bat '''
+        //             %VENV%\\Scripts\\python tournaments\\manage.py migrate
+        //             %VENV%\\Scripts\\python tournaments\\manage.py collectstatic --noinput
+        //             %VENV%\\Scripts\\python tournaments\\manage.py test
+        //         '''
+        //     }
+        // }
+
+        stage('Start Dev Server') {
+            steps {
                 bat '''
-                    echo "Multiline shell steps works too"
+                    cd StudyRoomProject
+                    start /B ..\\venv\\Scripts\\python manage.py runserver 0.0.0.0:8000
                 '''
             }
         }
-    }
-    post{
-        always{
-            echo 'This will always run'
-        }
-        success{
-            echo 'This will run if successful!'
-        }
-        failure{
-            echo 'This will run if failure!'
-        }
-        unstable{
-            echo 'This will run only if the wun was marked as unstable!'
+
+stage('Approval') {
+    steps {
+        script {
+            input message: "Approve to deploy production server on port 8001?", ok: "Deploy"
         }
     }
+}
+
+
+                stage('Run Production Server') {
+            steps {
+                bat '''
+                    cd StudyRoomProject
+                    start /B ..\\%VENV%\\Scripts\\python manage.py runserver 0.0.0.0:8001
+                '''
+            }
+        }
+
+
+    }
+}
 }
