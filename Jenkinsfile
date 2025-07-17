@@ -7,6 +7,7 @@ pipeline {
         stage('Check Out') {
             steps {
                 git branch: 'main', url: 'https://github.com/Jitenrai21/python_django_studyroom_project.git'
+            }
         }
 
         stage('Set up VENV') {
@@ -36,16 +37,15 @@ pipeline {
             }
         }
 
-stage('Approval') {
-    steps {
-        script {
-            input message: "Approve to deploy production server on port 8001?", ok: "Deploy"
+        stage('Approval') {
+            steps {
+                script {
+                    input message: "Approve to deploy production server on port 8001?", ok: "Deploy"
+                }
+            }
         }
-    }
-}
 
-
-                stage('Run Production Server') {
+        stage('Run Production Server') {
             steps {
                 bat '''
                     cd StudyRoomProject
@@ -53,8 +53,5 @@ stage('Approval') {
                 '''
             }
         }
-
-
     }
-}
 }
