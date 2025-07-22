@@ -1,47 +1,51 @@
-StudyRoomProject
-├── base/
-│   ├── templates/
-│   │    ├── activity_component.html                     
-│   │    ├── activity.html                     
-│   │    ├── delete.html                     
-│   │    ├── feed_component.html                     
-│   │    ├── home.html                     
-│   │    ├── login_register.html                     
-│   │    ├── profile.html                     
-│   │    ├── room_form.html                     
-│   │    ├── room.html                     
-│   │    ├── topic_components.html  
-│   │    ├── topics.html                     
-│   │    └── update-user.html
-│   ├── __init__.py    
-│   ├── admin.py    
-│   ├── apps.py    
-│   ├── forms.py    
-│   ├── models.py    
-│   ├── tests.py    
-│   ├── urls.py                 
-│   └── views.py
-│
-├── static/
-│   ├── images/
-│   ├── js/   
-│   │    └── script.js                     
-│   └── styles
-│        ├── main.css                     
-│        └── style.css
-│
-├── StudyRoom/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-│
-├── Templates/
-│   ├── main.html
-│   └── navbar.html
-│
-├── db.sqlite3              
-├── manage.py
-├── requirements.txt         
-└── Project_Structure              
+python_django_studyroom+project 
+    ├── StudyRoomProject/
+    │      ├── base/
+    │      │   ├── templates/
+    │      │   │    ├── activity_component.html                     
+    │      │   │    ├── activity.html                     
+    │      │   │    ├── delete.html                     
+    │      │   │    ├── feed_component.html                     
+    │      │   │    ├── home.html                     
+    │      │   │    ├── login_register.html                     
+    │      │   │    ├── profile.html                     
+    │      │   │    ├── room_form.html                     
+    │      │   │    ├── room.html                     
+    │      │   │    ├── topic_components.html  
+    │      │   │    ├── topics.html                     
+    │      │   │    └── update-user.html
+    │      │   ├── __init__.py    
+    │      │   ├── admin.py    
+    │      │   ├── apps.py    
+    │      │   ├── forms.py    
+    │      │   ├── models.py    
+    │      │   ├── tests.py    
+    │      │   ├── urls.py                 
+    │      │   └── views.py
+    │      │
+    │      ├── static/
+    │      │   ├── images/
+    │      │   ├── js/   
+    │      │   │    └── script.js                     
+    │      │   └── styles
+    │      │        ├── main.css                     
+    │      │        └── style.css
+    │      │
+    │      ├── StudyRoom/
+    │      │   ├── __init__.py
+    │      │   ├── asgi.py
+    │      │   ├── settings.py
+    │      │   ├── urls.py
+    │      │   └── wsgi.py
+    │      │
+    │      ├── Templates/
+    │      │   ├── main.html
+    │      │   └── navbar.html
+    │      │
+    │      ├── db.sqlite3              
+    │      └── manage.py
+    │
+    ├── Jenkinsfile
+    ├── Project_Structure
+    ├── Readme.md
+    └── requirements.txt
