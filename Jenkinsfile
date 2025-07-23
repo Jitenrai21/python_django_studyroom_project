@@ -21,6 +21,7 @@ pipeline {
                 bat '''
                 taskkill /F /IM python.exe > nul 2>&1
                 cd webapp\\StudyRoomProject
+                pip install -r ..\\requirement.txt
                 start /B python manage.py runserver 0.0.0.0:8000
                 '''
             }
