@@ -22,7 +22,7 @@ pipeline {
                 bat '''
                 taskkill /F /IM python.exe > nul 2>&1
                 cd webapp\\StudyRoom
-                pip install -r ..\\requirement.txt
+                pip install -r ..\\requirements.txt
                 start /B python manage.py runserver 0.0.0.0:8000
                 '''
             }
