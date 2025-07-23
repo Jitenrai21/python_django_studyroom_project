@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         GIT_REPO = 'https://github.com/Jitenrai21/python_django_studyroom_project.git'
+        VENV = 'venv'
     }
 
     stages {
@@ -16,14 +17,19 @@ pipeline {
                 }
             }
         }
-
+        stage('Set up VENV') {
+            steps {
+                bat 'python -m venv %VENV%'
+                bat '%VENV%\\Scripts\\python -m pip install --upgrade pip'
+                bat '%VENV%\\Scripts\\pip install -r requirements.txt'
+            }
+        }
         stage('Deploy to Staging') {
             steps {
                 bat '''
                 taskkill /F /IM python.exe > nul 2>&1
                 cd webapp\\StudyRoom
-                pip install -r ..\\requirements.txt
-                start /B python manage.py runserver 0.0.0.0:8000
+                start /B ..\\venv\\Scripts\\python manage.py runserver 0.0.0.0:8000
                 '''
             }
         }
@@ -39,7 +45,7 @@ pipeline {
                 bat '''
                 taskkill /F /IM python.exe > nul 2>&1
                 cd webapp\\StudyRoom
-                start /B python manage.py runserver 0.0.0.0:8001
+                start /B ..\\venv\\Scripts\\python manage.py runserver 0.0.0.0:8000
                 '''
             }
         }
